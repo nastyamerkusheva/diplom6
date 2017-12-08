@@ -1,0 +1,27 @@
+%table.table-striped.table-hover.table-style
+  %caption.new-obj
+    = link_to new_person_path, class: 'btn btn-primary' do
+      = fa_icon :plus
+      = t('buttons.new.people')
+  %thead.table-head
+    %tr
+      %th= Person.human_attribute_name(:pid)
+      %th
+
+  %tbody
+    - @people.each do |person|
+      %tr
+        %td{:data => {:label => Person.human_attribute_name(:pid)}}
+          = person.pid
+        %td.right
+          = link_to person, class: 'btn btn-warning' do
+            = fa_icon :eye
+            = t('buttons.show')
+          = link_to edit_person_path(person), class: 'btn btn-info' do
+            = fa_icon :edit
+            = t('buttons.edit')
+          = link_to  person, :method => :delete,
+          :data => { :confirm => t('buttons.confirm.people') },
+          class: 'btn btn-danger' do
+            = fa_icon :times
+            = t('buttons.destroy')

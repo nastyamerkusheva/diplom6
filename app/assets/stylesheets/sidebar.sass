@@ -1,0 +1,120 @@
+
+#menuVertical
+  width: $menuVertical-width
+  height: $menuVertical-height
+  position: $menuVertical-position
+  z-index: $menuVertical-z-index
+  top: $menuVertical-top
+  transition: $menuVertical-transition
+  ul
+    display: block
+    width: $menuVertical-ul-width
+    height: auto
+    margin: $menuVertical-ul-margin
+    padding: $menuVertical-ul-padding
+    list-style: none
+    position: relative
+    li
+      display: block
+      width: $menuVertical-ul-li-width
+      position: relative
+      a
+        position: relative
+        display: block
+        width: $menuVertical-ul-li-a-width
+        height: auto
+        box-sizing: border-box
+        font-size: $menuVertical-ul-li-a-font-size
+        text-transform: $menuVertical-ul-li-a-text-transform
+        font-weight: $menuVertical-ul-li-a-font-weight
+        color: $menuVertical-ul-li-a-color
+        line-height: $menuVertical-ul-li-a-line-height
+        padding:  $menuVertical-ul-li-a-padding
+        background: $menuVertical-ul-li-a-background
+        text-decoration: none
+        text-shadow: 2px 2px 3px #222
+        &:hover
+          background: $menuVertical-ul-li-a-hover-background
+          color: $menuVertical-ul-li-a-hover-color
+      &:hover a
+        background: $menuVertical-ul-li-a-hover-background
+        color: $menuVertical-ul-li-a-hover-color
+      ul
+        position: absolute
+        top: 0px
+        left: 198px
+        display: none
+        width: auto
+      &:hover ul
+        display: block
+      ul li a
+        white-space: nowrap
+        text-transform: none
+        padding: 10px 20px
+        width: 153px
+        &:hover
+          background: $menuVertical-ul-li-a-hover-ul-li-a-background
+          color: $menuVertical-ul-li-a-hover-ul-li-a-color
+
+.menu
+  position: absolute
+  width: $menu-width
+  height: $menu-height
+  background: $menu-background
+  box-shadow: $menu-box-shadow
+  position: fixed
+  top: $menu-top
+  z-index: $menu-z-index
+.footer
+  position: absolute
+  width: $footer-width
+  height: $footer-height
+  bottom: $footer-bottom
+  background: $footer-background
+  margin-bottom: $footer-margin-bottom
+  z-index: $footer-z-index
+  border-top: $footer-border-top
+  color: $footer-color
+  text-align: center
+  padding-top: $footer-padding-top
+
+.img_n
+  transition: .3s
+  &:hover
+    margin-left: 5px
+    transition: .3s
+
+/*MEDIA
+
+@media screen and (max-width: 1152px)
+  .menu
+    width: $media-menu-width
+    transition: .3s
+  #menuVertical ul li
+    a
+      width: $media-menu-width
+      transition: .3s
+    width: 57px
+    ul li a
+      left: -141px
+  span
+    display: none
+  .footer
+    transform: rotate(-90deg)
+    left: -77px
+    border-right: 1px solid rgb(9, 42, 51)
+    height: 24px
+    bottom: 77px
+    text-align: left
+    padding-left: 11px
+    padding-bottom: 25px
+    padding-top: 6px
+  .img_n i
+    height: 40px
+    margin-left: -7px
+    margin-top: 9px
+    width: $media-menu-width
+
+@media screen and (min-width: 1152px)
+  .img_n i
+    display: none

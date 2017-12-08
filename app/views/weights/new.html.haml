@@ -1,0 +1,11 @@
+%h1.my-tit.row
+  .col-md-12
+    = t('headers.weights.new')
+
+.row
+  %hr.my-hr
+
+= render 'form'
+.row
+  .col-md-6.col-centre
+    = link_to t('helpers.submit.back'), weights_path, class: "btn btn-primary buttons"

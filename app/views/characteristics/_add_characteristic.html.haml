@@ -1,0 +1,41 @@
+.col-md-6
+  .panel.panel-info
+    .panel-heading
+      .small
+        Новая характеристика
+        %span.toright
+          = link_to_remove_characteristic(fn)
+        .clearfix
+    .panel-body
+      .form-group
+        .row
+          .col-md-3.col-centre
+            = fn.label :name
+          .col-md-6.col-centre
+            = fn.text_field :name
+        -# .row
+        -#   .col-md-3.col-centre
+        -#     = fn.label :information_system
+        -#   .col-md-6.col-centre
+        -#     = fn.text_field :information_system_id
+        .row
+          .col-md-3.col-centre
+            = fn.label :type_of_data
+          .col-md-6.col-centre
+            = fn.number_field :type_of_data
+        .row
+          .col-md-3.col-centre
+            = fn.label :result_type
+          .col-md-6.col-centre
+            = fn.number_field :result_type
+        .row
+          .col-md-3.col-centre
+            = fn.label :address
+          .col-md-6.col-centre
+            -# - raise @addresses.inspect
+            = fn.select :address_id, options_for_select(@addresses), {}, class: 'form-control'
+        .btn.btn-success#parse
+          -# = link_to "parse", new_my_service_path(:my_service => { :account_id => acct.id }
+          = link_to 'parse',lfj_path
+          =render("part_of_characteristics/prop")
+          -# = link_to 'parse',lfj_path(:js => {:href => "/fraud.json"})

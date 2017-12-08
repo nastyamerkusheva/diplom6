@@ -1,0 +1,10 @@
+%h1.my-tit.row
+  .col-md-12
+    = t('headers.information_systems.edit')
+= render 'form'
+
+.row
+  .col-md-3.col-centre
+    = link_to t('helpers.submit.back'), information_systems_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre
+    = link_to t('helpers.submit.show'), @information_system, class: "btn btn-primary buttons"

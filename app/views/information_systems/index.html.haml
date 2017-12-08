@@ -1,0 +1,54 @@
+%table.table-striped.table-hover.table-style.table-responsive
+  .col-md-3.col-sm-3
+    %caption.new-obj.table-responsive
+      = link_to new_information_system_path, class: 'btn btn-primary' do
+        = fa_icon :plus
+        = t('headers.information_systems.new')
+  %thead.table-head
+    %tr
+      %th= InformationSystem.human_attribute_name(:name)
+      %th= InformationSystem.human_attribute_name(:timezone)
+      %th
+
+  %tbody
+    - @information_systems.each do |information_system|
+      %tr
+        %td{:data => {:label => InformationSystem.human_attribute_name(:name)}}
+          = information_system.name
+        %td{:data => {:label => InformationSystem.human_attribute_name(:timezone)}}
+          = information_system.timezone
+        %td.right
+          = link_to information_system, class: 'btn btn-warning' do
+            = fa_icon :eye
+            = t('buttons.show')
+          = link_to edit_information_system_path(information_system), class: 'btn btn-info' do
+            = fa_icon :edit
+            = t('buttons.edit')
+          = link_to  information_system, :method => :delete,
+          :data => { :confirm => t('buttons.confirm.information_systems') },
+          class: 'btn btn-danger' do
+            = fa_icon :times
+            = t('buttons.destroy')
+-# %h1 Listing information_systems
+-#
+-# %table
+-#   %thead
+-#     %tr
+-#       %th Name
+-#       %th Timezone
+-#       %th
+-#       %th
+-#       %th
+-#
+-#   %tbody
+-#     - @information_systems.each do |information_system|
+-#       %tr
+-#         %td= information_system.name
+-#         %td= information_system.timezone
+-#         %td= link_to 'Show', information_system
+-#         %td= link_to 'Edit', edit_information_system_path(information_system)
+-#         %td= link_to 'Destroy', information_system, method: :delete, data: { confirm: 'Are you sure?' }
+-#
+-# %br
+-#
+-# = link_to 'New Information system', new_information_system_path

@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= Person.human_attribute_name(:pid)
+      %th
+
+  %tbody
+    %tr
+      %td{:data => {:label => Person.human_attribute_name(:pid)}}
+        = @person.pid
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), people_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_person_path(@person), class: "btn btn-primary buttons"

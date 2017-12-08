@@ -1,0 +1,19 @@
+%p#notice= notice
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= InformationSystem.human_attribute_name(:name)
+      %th= InformationSystem.human_attribute_name(:timezone)
+      %th
+%tbody
+  %tr
+    %td{:data => {:label => InformationSystem.human_attribute_name(:name)}}
+      = @information_system.name
+    %td{:data => {:label => InformationSystem.human_attribute_name(:timezone)}}
+      = @information_system.timezone
+
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), information_systems_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_information_system_path(@information_system), class: "btn btn-primary buttons"

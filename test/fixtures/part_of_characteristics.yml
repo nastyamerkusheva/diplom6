@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  characteristic: one
+  pid: 1
+  part_name: MyString
+  weight: 1
+
+two:
+  characteristic: two
+  pid: 1
+  part_name: MyString
+  weight: 1

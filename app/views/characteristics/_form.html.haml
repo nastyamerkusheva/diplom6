@@ -1,0 +1,92 @@
+= form_for @characteristic do |f|
+  = hidden_field_tag(:form_id, :address)
+  - if @characteristic.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@characteristic.errors.count, "error")} prohibited this characteristic from being saved:"
+      %ul
+        - @characteristic.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-md-3.col-centre
+      = f.label :name
+    .col-md-6.col-centre
+      = f.text_field :name
+  .row
+    .col-md-3.col-centre
+      = f.label :information_system
+    .col-md-6.col-centre
+      = f.text_field :information_system_id
+  .row
+    .col-md-3.col-centre
+      = f.label :type_of_data
+    .col-md-6.col-centre
+      = f.number_field :type_of_data
+  .row
+    .col-md-3.col-centre
+      = f.label :result_type
+    .col-md-6.col-centre
+      = f.number_field :result_type
+  .row#id1
+    .col-md-3.col-centre
+      = f.label :address
+    .col-md-6.col-centre
+      -# - raise @addresses.inspect
+      = f.select :address_id, options_for_select(@addresses), {}, class: 'form-control'
+  -#   .col-md-6.col-centre
+  -#     = link_to ?#, class: 'btn btn-info', id: 'add_add' do
+  -#       =fa_icon :plus
+  -# .row.hide#id2
+  -#   .col-md-6.col-centre
+  -#     = link_to ?#, class: 'btn btn-info', id: 'add_add2' do
+  -#       =fa_icon :times
+  -#   = f.fields_for (:address) do |ff|
+  -#     .row
+  -#       .col-md-3.col-centre
+  -#         %p
+  -#           Добавить новый адрес
+  -#       .col-md-3.col-centre
+  -#         = ff.label :name
+  -#         = ff.text_field :name, disabled: :disabled
+  -#   .my-hr
+  -#     %hr
+  .row
+    .col-md-6.col-centre
+      = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"
+-# (Address.all.map{|x| [x., x.id]})
+
+    -# = link_to_add_note(f, f.object)
+
+  = form_for :address do |ff|
+    .col-md-2
+      = ff.label :name
+    .col-md-3.col-centre
+      = ff.text_field :name
+      = ff.hidden_field :id
+    .my-hr
+      %hr
+    .row
+      .col-md-6.col-centre
+        = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"
+  -# .row
+  -#   .col-md-12
+  -#     = link_to_add_address(f, f.object)
+  -# = f.fields_for :address do |fn|
+  -#   .col-md-6
+  -#     .panel.panel-info
+  -#       .panel-heading
+  -#         .small
+            -# Внесено:
+            -# = lnil(fn.object.created_at)
+            -# Отредактировано
+            -# = lnil(fn.object.updated_at)
+    -#         %span.toright
+    -#           = link_to_remove_address(fn)
+    -#         .clearfix
+    -#     .panel-body
+    -#       .form-group
+    -#         = fn.label :note
+    -#         = fn.text_area(:note, class: 'form-control')
+    -#
+    .col-md-6.col-centre
+      = f.text_field :address_id/

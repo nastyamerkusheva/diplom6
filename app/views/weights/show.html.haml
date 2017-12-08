@@ -1,0 +1,22 @@
+%p#notice= notice
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= Weight.human_attribute_name(:name)
+      %th= Weight.human_attribute_name(:part_of_characteristic)
+      %th= Weight.human_attribute_name(:weight_val)
+      %th
+  %tbody
+    %tr
+      %td{:data => {:label => Weight.human_attribute_name(:name)}}
+        =  @weight.name
+      %td{:data => {:label => Weight.human_attribute_name(:part_of_characteristic)}}
+        = @weight.part_of_characteristic.part_name
+      %td{:data => {:label => Weight.human_attribute_name(:weight_val)}}
+        =  @weight.weight_val
+
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), weights_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_weight_path(@weight), class: "btn btn-primary buttons"

@@ -1,0 +1,49 @@
+%header
+  .head
+    %a.ico{href: main_information_systems_path}
+      =image_tag "save.jpeg"
+    %p
+      = controller.controller_name
+%nav#menuVertical
+  %ul
+    %li
+      %a{href:  information_systems_path}
+        .img_n
+          %i.fa.fa-outdent
+        %span
+          Информационные системы
+    %li
+      %a{href:  characteristics_path }
+        .img_n
+          %i.fa.fa-list
+        %span
+          Характеристики
+    %li
+      %a{href:  addresses_path}
+        .img_n
+          %i.fa.fa-address-book
+        %span
+          Адреса
+    %li
+      %a{href:  characteristic_values_path }
+        .img_n
+          %i.fa.fa-table
+        %span
+          Характеристика-значение
+    %li
+      %a{href:  part_of_characteristics_path }
+        .img_n
+          %i.fa.fa-table
+        %span
+          Часть характеристики
+    %li
+      %a{href:  people_path}
+        .img_n
+          %i.fa.fa-users
+        %span
+          Люди
+    %li
+      =link_to 'parse',lfj_path
+.menu
+  .footer
+    Copyright © 2017

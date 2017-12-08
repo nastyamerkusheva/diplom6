@@ -1,0 +1,12 @@
+%h1.my-tit.row
+  .col-md-12
+    = t('headers.part_of_characteristics.edit')
+
+= render 'form'
+
+
+.row
+  .col-md-3.col-centre
+    = link_to t('helpers.submit.back'), part_of_characteristics_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre
+    = link_to t('helpers.submit.show'), @part_of_characteristic, class: "btn btn-primary buttons"

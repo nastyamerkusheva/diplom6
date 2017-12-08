@@ -1,0 +1,12 @@
+.col-md-6
+  .panel.panel-info
+    .panel-heading
+      .small
+        Новый комментарий
+        %span.toright
+          = link_to_remove_address(fn)
+        .clearfix
+    .panel-body
+      .form-group
+        = fn.label :address
+        = fn.text_area(:name, class: 'form-control')

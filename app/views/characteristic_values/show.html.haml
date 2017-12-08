@@ -1,0 +1,29 @@
+%p#notice= notice
+
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= CharacteristicValue.human_attribute_name(:part_of_characteristic)
+      %th= CharacteristicValue.human_attribute_name(:value)
+      %th= CharacteristicValue.human_attribute_name(:person)
+      %th= CharacteristicValue.human_attribute_name(:vdate)
+      %th= CharacteristicValue.human_attribute_name(:vtime)
+      %th
+
+  %tbody
+    %tr
+      %td{:data => {:label => CharacteristicValue.human_attribute_name(:part_of_characteristic)}}
+        = @characteristic_value.part_of_characteristic.part_name
+      %td{:data => {:label => CharacteristicValue.human_attribute_name(:value)}}
+        = @characteristic_value.value
+      %td{:data => {:label => CharacteristicValue.human_attribute_name(:person)}}
+        = @characteristic_value.person.pid
+      %td{:data => {:label => CharacteristicValue.human_attribute_name(:vdate)}}
+        = @characteristic_value.vdate
+      %td{:data => {:label => CharacteristicValue.human_attribute_name(:vtime)}}
+        = @characteristic_value.vtime
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), characteristic_values_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_characteristic_value_path(@characteristic_value), class: "btn btn-primary buttons"

@@ -1,0 +1,18 @@
+= form_for @person do |f|
+  - if @person.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@person.errors.count, "error")} prohibited this person from being saved:"
+      %ul
+        - @person.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-md-3.col-centre
+      = f.label :pid
+    .col-md-6.col-centre
+      = f.number_field :pid
+  .my-hr
+    %hr
+  .row
+    .col-md-6.col-centre
+      = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"

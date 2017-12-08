@@ -1,0 +1,17 @@
+= form_for @address do |f|
+  - if @address.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@address.errors.count, "error")} prohibited this address from being saved:"
+      %ul
+        - @address.errors.full_messages.each do |message|
+          %li= message
+  .row
+    .col-md-3
+      = f.label :name
+      = f.text_field :name
+  .my-hr
+    %hr
+  .row
+    .col-md-6.col-centre
+      .actions
+        = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"
