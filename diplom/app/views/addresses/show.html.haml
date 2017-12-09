@@ -1,0 +1,17 @@
+%p#notice= notice
+
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= Address.human_attribute_name(:name)
+      %th
+
+  %tbody
+    %tr
+      %td{:data => {:label => Address.human_attribute_name(:name)}}
+        = @address.name
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), addresses_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_address_path(@address), class: "btn btn-primary buttons"

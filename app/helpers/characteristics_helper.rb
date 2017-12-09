@@ -1,6 +1,7 @@
 module CharacteristicsHelper
   def link_to_add_characteristic(form, person)
     new_object = Characteristic.new()
+    new_object.name = 'QQQ1'
     fields = form.fields_for(:characteristics, new_object,
       :child_index => 'new_characteristic') do |builder|
       render('characteristics/add_characteristic', fn: builder)

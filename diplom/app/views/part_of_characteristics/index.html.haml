@@ -1,0 +1,40 @@
+%table.table-striped.table-hover.table-style
+  %caption.new-obj
+    = link_to new_information_system_path, class: 'btn btn-primary' do
+      = fa_icon :plus
+      = t('headers.part_of_characteristics.index')
+  %thead.table-head
+    %tr
+      %th= PartOfCharacteristic.human_attribute_name(:characteristic)
+      %th= PartOfCharacteristic.human_attribute_name(:pid)
+      %th= PartOfCharacteristic.human_attribute_name(:part_name)
+      %th= PartOfCharacteristic.human_attribute_name(:weight)
+      %th= PartOfCharacteristic.human_attribute_name(:default_weight)
+      %th
+
+  %tbody
+    - @part_of_characteristics.each do |part_of_characteristic|
+      %tr
+        %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:characteristic)}}
+          = part_of_characteristic.characteristic.name
+        %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:pid)}}
+          = part_of_characteristic.pid
+        %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:part_name)}}
+          = part_of_characteristic.part_name
+        %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:weight)}}
+          = part_of_characteristic.weight
+        %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:default_weight)}}
+          = part_of_characteristic.default_weight
+
+        %td.right
+          = link_to part_of_characteristic, class: 'btn btn-warning' do
+            = fa_icon :eye
+            = t('buttons.show')
+          = link_to edit_part_of_characteristic_path(part_of_characteristic), class: 'btn btn-info' do
+            = fa_icon :edit
+            = t('buttons.edit')
+          = link_to  part_of_characteristic, :method => :delete,
+          :data => { :confirm => t('buttons.confirm.part_of_characteristics') },
+          class: 'btn btn-danger' do
+            = fa_icon :times
+            = t('buttons.destroy')

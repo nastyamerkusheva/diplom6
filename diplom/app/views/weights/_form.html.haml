@@ -1,0 +1,31 @@
+= form_for @weight do |f|
+  - if @weight.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@weight.errors.count, "error")} prohibited this weight from being saved:"
+      %ul
+        - @weight.errors.full_messages.each do |message|
+          %li= message
+
+  .row
+    .col-md-3.col-centre
+      = f.label :name
+    .col-md-6.col-centre
+      = f.text_field :name
+  .row
+    .col-md-3.col-centre
+      = f.label :part_of_characteristic
+    .col-md-6.col-centre
+      = f.text_field :part_of_characteristic_id
+  .row
+    .col-md-3.col-centre
+      = f.label :weight_val
+    .col-md-6.col-centre
+      = f.text_field :weight_val
+  -# .field
+  -#   = f.label :default
+  -#   = f.text_field :default
+  .my-hr
+    %hr
+  .row
+    .col-md-6.col-centre
+      = f.submit t('helpers.submit.submit'), class: "btn btn-primary buttons"

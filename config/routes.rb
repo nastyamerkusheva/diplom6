@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :information_systems do
     collection do
       get :main
+      post :load_from_json_is
     end
   end
   resources :addresses

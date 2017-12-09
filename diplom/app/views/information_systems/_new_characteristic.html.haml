@@ -1,0 +1,53 @@
+.col-md-6
+  .panel.panel-info
+    .panel-heading
+      .small
+        Новый комментарий
+        %span.toright
+          = link_to_remove_characteristic(fn)
+        .clearfix
+    .panel-body
+      .form-group
+        .row
+          .col-md-3.col-centre
+            = fn.label :name
+          .col-md-6.col-centre
+            = fn.text_field :name
+        -# .row
+        -#   .col-md-3.col-centre
+        -#     = fn.label :information_system
+        -#   .col-md-6.col-centre
+        -#     = fn.text_field :information_system_id
+        .row
+          .col-md-3.col-centre
+            = fn.label :type_of_data
+          .col-md-6.col-centrenotes
+            = fn.number_field :type_of_data
+        .row
+          .col-md-3.col-centre
+            = fn.label :result_type
+          .col-md-6.col-centre
+            = fn.number_field :result_type
+        .row#id1
+          .col-md-3.col-centre
+            = fn.label :address
+          .col-md-6.col-centre
+            -# - raise @addresses.inspect
+            = fn.select :address_id, options_for_select(@addresses), {}, class: 'form-control'
+        -#   .col-md-6.col-centre
+        -#     = link_to ?#, class: 'btn btn-info', id: 'add_add' do
+        -#       =fa_icon :plus
+        -# .row.hide#id2
+        -#   .col-md-6.col-centre
+        -#     = link_to ?#, class: 'btn btn-info', id: 'add_add2' do
+        -#       =fa_icon :times
+        -#   = fn.fields_for (:address) do |ff|
+        -#     .row
+        -#       .col-md-3.col-centre
+        -#         %p
+        -#           Добавить новый адрес
+        -#       .col-md-3.col-centre
+        -#         = ff.label :name
+        -#         = ff.text_field :name, disabled: :disabled
+          .my-hr
+            %hr

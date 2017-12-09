@@ -1,5 +1,6 @@
 class PartOfCharacteristicsController < ApplicationController
   before_action :set_part_of_characteristic, only: [:show, :edit, :update, :destroy]
+  include Lfj 
 
   # GET /part_of_characteristics
   # GET /part_of_characteristics.json
@@ -11,7 +12,7 @@ class PartOfCharacteristicsController < ApplicationController
   # GET /part_of_characteristics/1.json
   def show
   end
-  
+
   # GET /part_of_characteristics/new
   def new
     @part_of_characteristic = PartOfCharacteristic.new

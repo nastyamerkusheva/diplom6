@@ -2,10 +2,10 @@ class JsonExample
   include HTTParty
   base_uri 'localhost:3000'
 
-  def self.test()
+  def self.test(name)
     # файл лежит в public
 
-      JSON.parse get("/fraud.json", query: {code: 'Какой-то параметр в качестве примера'}).body
+      JSON.parse get(name, query: {code: 'Какой-то параметр в качестве примера'}).body
     rescue Exception => e
       puts e.message
       return nil

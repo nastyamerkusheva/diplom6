@@ -1,0 +1,30 @@
+%p#notice= notice
+
+%table.table-striped.table-hover.table-style
+  %thead
+    %tr
+      %th= Characteristic.human_attribute_name(:name)
+      %th= Characteristic.human_attribute_name(:information_system)
+      %th= Characteristic.human_attribute_name(:type_of_data)
+      %th= Characteristic.human_attribute_name(:result_type)
+      %th= Characteristic.human_attribute_name(:address)
+      %th
+
+  %tbody
+    %tr
+      %td{:data => {:label => Characteristic.human_attribute_name(:name)}}
+        = @characteristic.name
+      %td{:data => {:label => Characteristic.human_attribute_name(:information_system)}}
+        = @characteristic.information_system.name
+      %td{:data => {:label => Characteristic.human_attribute_name(:type_of_data)}}
+        = @characteristic.type_of_data
+      %td{:data => {:label => Characteristic.human_attribute_name(:result_type)}}
+        = @characteristic.result_type
+      %td{:data => {:label => Characteristic.human_attribute_name(:address)}}
+        = @characteristic.address.name
+
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), characteristics_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_characteristic_path(@characteristic), class: "btn btn-primary buttons"

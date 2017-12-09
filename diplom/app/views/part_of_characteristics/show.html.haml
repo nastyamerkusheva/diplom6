@@ -1,0 +1,30 @@
+%p#notice= notice
+%table.table-striped.table-hover.table-style
+  %thead.table-head
+    %tr
+      %th= PartOfCharacteristic.human_attribute_name(:characteristic)
+      %th= PartOfCharacteristic.human_attribute_name(:pid)
+      %th= PartOfCharacteristic.human_attribute_name(:part_name)
+      %th= PartOfCharacteristic.human_attribute_name(:weight)
+      %th= PartOfCharacteristic.human_attribute_name(:default_weight)
+      %th
+
+
+  %tbody
+    %tr
+      %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:characteristic)}}
+        = @part_of_characteristic.characteristic.name
+      %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:pid)}}
+        = @part_of_characteristic.pid
+      %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:part_name)}}
+        = @part_of_characteristic.part_name
+      %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:weight)}}
+        = @part_of_characteristic.weight
+      %td{:data => {:label => PartOfCharacteristic.human_attribute_name(:default_weight)}}
+        = @part_of_characteristic.default_weight
+
+.row
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.back'), part_of_characteristics_path, class: "btn btn-primary buttons"
+  .col-md-3.col-centre.col-sm-6
+    = link_to t('helpers.submit.create'), edit_part_of_characteristic_path(@part_of_characteristic), class: "btn btn-primary buttons"

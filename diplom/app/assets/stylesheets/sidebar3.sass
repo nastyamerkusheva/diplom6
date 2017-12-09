@@ -1,0 +1,96 @@
+/* ГЛАВНАЯ ТЕМА
+
+BODY
+  color: #3B4043
+  background-color: #F8F8F8
+  font-family: Verdana, Arial, sans-serif
+  margin: 0
+
+P
+  font-size: 12pt
+  text-align: justify
+
+H1, H2, H6
+  font-weight: normal
+  font-family: Arial, sans-serif
+  letter-spacing: 1mm
+  text-shadow: #CDD9DB 1px 1px
+
+ADDRESS
+  text-align: right
+
+UL
+  list-style-type: none
+
+H1
+  font-size: 20pt
+
+H2
+  font-size: 18pt
+
+H6
+  font-size: 12pt
+
+TABLE
+  font-size: 10pt
+
+body
+  margin: 0
+  padding: 0
+  width: 100%
+  height: 100%
+
+BLOCKQUOTE P, ADDRESS
+  font-size: 10pt
+  font-style: italic
+
+.sidebar-left
+  position: $left-side-position
+  background-color: $side-backgraund
+  width: $left-side-width - $left-side-padding
+  height: $left-side-height
+  float: left
+  margin-left: $left-side-margin
+  padding: $left-side-padding
+  list-style-type: none
+  font-size: $side-font-size
+  min-width: $side-min-width
+
+
+.sidebar-left li
+  display: block
+
+
+.sidebar-left li:hover
+  background-color: $left-side-li-backgraung-haver
+  -webkit-transform: translateX($side-transform)
+  -moz-transform: translateX($side-transform)
+  -ms-transform: translateX($side-transform)
+  transform: translateX($side-transform)
+  -webkit-transition: opacity $side-transform-sec, -webkit-transform $side-transform-sec
+  -moz-transition: opacity $side-transform-sec, -moz-transform $side-transform-sec
+  -ms-transition: opacity $side-transform-sec, -ms-transform $side-transform-sec
+  transition: opacity $side-transform-sec, transform $side-transform-sec
+
+.sidebar-right
+  left: ($left-side-width + $main-width)
+  position: $right-side-position
+  background-color: $side-backgraund
+  height: $right-side-height
+  width: $right-side-width
+  margin-left: $right-side-margin
+  float: left
+  padding: $right-side-padding
+  list-style-type: none
+  font-size: $side-font-size
+  min-width: $side-min-width
+.sidebar-right li
+  display: block
+
+.sidebar-right li:hover
+  background-color: $right-side-li-backgraung-haver
+.sidebar-right li
+  border-bottom: $right-side-border
+
+.sidebar-left li
+  border-bottom: $left-side-border

@@ -34,8 +34,7 @@
           .col-md-6.col-centre
             -# - raise @addresses.inspect
             = fn.select :address_id, options_for_select(@addresses), {}, class: 'form-control'
-        .btn.btn-success#parse
-          -# = link_to "parse", new_my_service_path(:my_service => { :account_id => acct.id }
-          = link_to 'parse',lfj_path
-          =render("part_of_characteristics/prop")
-          -# = link_to 'parse',lfj_path(:js => {:href => "/fraud.json"})
+        .parse
+          = link_to "parse", ?#, data:{url: load_from_json_is_information_systems_path()}, remote: true, class: 'btn btn-primary'
+          -# = link_to 'parse',lfj_path
+          -# =render("part_of_characteristics/prop")

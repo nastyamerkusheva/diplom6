@@ -1,5 +1,6 @@
 class CharacteristicsController < ApplicationController
   before_action :set_characteristic, only: [:show, :edit, :update, :destroy]
+  include Lfj
 
 
   # GET /characteristics

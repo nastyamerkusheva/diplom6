@@ -68,7 +68,14 @@ class InformationSystemsController < ApplicationController
       end
     end
   end
-
+  def load_from_json_is()
+    respond_to do |format|
+      format.js do
+        @pid =  (params[:address_id])
+        @oid = params['oid']
+      end
+    end
+  end
   # DELETE /information_systems/1
   # DELETE /information_systems/1.json
   def destroy
