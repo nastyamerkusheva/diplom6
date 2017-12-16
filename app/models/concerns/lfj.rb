@@ -1,27 +1,14 @@
 module Lfj
   extend ActiveSupport::Concern
+  include HTTParty
+  base_uri ''
 
-    def load_from_json
-      name = params[:js]
-      # raise (name[:href]).inspect
-      # JsonExample.new((name[:href]))
-      je = JsonExample.test(name[:href])
-      my_parse(je)
+  def self.load_char_parts(address)
+    begin
+    res = JSON.parse get(address).body
+    rescue Exception => e
+      return e.message
     end
-    end
-
-    def my_parse (array)
-    # raise (array[0])
-    @poc = []
-    array.each do |poc|
-      poc.keys.each do |k|
-        @poc<< k
-      end
-    end
-     @poc.uniq!
-     @poc.inspect
-
-
-    end
-
+    return res
+  end
 end

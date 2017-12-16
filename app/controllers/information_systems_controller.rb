@@ -72,7 +72,11 @@ class InformationSystemsController < ApplicationController
     respond_to do |format|
       format.js do
         @pid =  (params[:address_id])
+        @adr = Address.find(@pid)
         @oid = params['oid']
+        p=Lfj.load_char_parts(@adr.name)
+        @type_of_data = (p[0]).size==2 ? 1 : 0
+        raise (p[0]).inspect
       end
     end
   end

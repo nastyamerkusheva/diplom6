@@ -1,4 +1,6 @@
 class InformationSystem < ApplicationRecord
+  include Lfj
+
   has_many :characteristics, inverse_of: :information_system
 
   accepts_nested_attributes_for :characteristics, allow_destroy: true
