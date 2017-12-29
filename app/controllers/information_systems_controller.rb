@@ -74,7 +74,8 @@ class InformationSystemsController < ApplicationController
         @pid =  (params[:address_id])
         @adr = Address.find(@pid)
         @oid = params['oid']
-        p=Lfj.load_char_parts(@adr.name)
+        p = Lfj.load_char_parts(@adr.name)
+        raise p.inspect[0..100]
         @type_of_data = (p[0]).size==2 ? 1 : 0
         raise (p[0]).inspect
       end

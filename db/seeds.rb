@@ -8,7 +8,7 @@
 PartOfCharacteristic.delete_all
 Characteristic.delete_all
 Address.delete_all
-Address.create(name: 'localhost')
+Address.create(name: 'http://localhost:3000/fraud.json')
 Person.create(pid: 1)
 # This file is auto-generated from the current state of the database. Instead
 
