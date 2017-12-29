@@ -74,10 +74,14 @@ class InformationSystemsController < ApplicationController
         @pid =  (params[:address_id])
         @adr = Address.find(@pid)
         @oid = params['oid']
+        @parts = []
         p = Lfj.load_char_parts(@adr.name)
-        raise p.inspect[0..100]
-        @type_of_data = (p[0]).size==2 ? 1 : 0
-        raise (p[0]).inspect
+        unless p.kind_of?(String)
+          example_row = p[0]
+          example_row.keys[1..-1].each do |key|
+            @parts << [key]
+          end
+        end
       end
     end
   end

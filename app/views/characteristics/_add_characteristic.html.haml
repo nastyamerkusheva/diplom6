@@ -29,7 +29,7 @@
           .col-md-6.col-centre
             = fn.number_field :result_type
         .row
-          .col-md-3.col-centre
+          .col-md-3.col-centre{data: {new_part: "#{new_part(fn)}"}}
             = fn.label :address
           .col-md-6.col-centre
             -# - raise @addresses.inspect

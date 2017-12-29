@@ -14,9 +14,10 @@
 @load_from_json_body_f = (link)->
 
   $(".parse a").on 'click', ->
-    val = $(this).parent().parent().find("[id$='address_id']").val()
+    obj = $(this).parent().parent().find("[id$='address_id']");
+    val = obj.val()
     url = $(this).data('url')
-    oid = $(this).parent().parent().find("[id$='address_id']").attr('id')
+    oid = obj.attr('id')
     $.post(url, { address_id: val, oid: oid })
     false
   false

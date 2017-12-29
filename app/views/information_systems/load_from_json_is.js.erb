@@ -1,2 +1,6 @@
-$('#<%= @oid %>').after('<p>QQQQQ</p>');
-alert("qq");
+$('#<%= @oid %>').parent().parent().parent().find('.part').remove();
+html = $('#<%= @oid %>').data('new-part');
+console.log(html);
+<% @parts.each do |part| %>
+  $('#<%= @oid %>').parent().parent().parent().prepend(html);
+<% end %>
